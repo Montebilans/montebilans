@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Firma</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        /* Postojeći stilovi */
+        body {
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+
+        /* Navigacija */
+        .navbar {
+            background-color: #000000; /* Crna boja za navigacioni bar */
+            border-radius: 5px; /* Zaobljenje ivica nav bara */
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important; /* Jarko žuta za tekst linkova */
+            border-radius: 5px; /* Zaobljenje ivica za nav-linkove */
+        }
+        .navbar-brand img {
+            border: 3px solid #FFD700; /* Žuti okvir */
+            border-radius: 5px; /* Zaobljenje ivica */
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka */
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar-brand img:hover {
+            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6); /* Veća žuta senka prilikom prelaska mišem */
+        }
+        .navbar-toggler {
+            border-color: #FFD700;
+            border-radius: 3px; /* Zaobljenje ivica za toggler */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link:hover {
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Žuta senka prilikom prelaska mišem */
+            transition: box-shadow 0.3s ease;
+        }
+        .dropdown-menu {
+            background-color: #000000; /* Crna boja za dropdown meni */
+            border-radius: 5px; /* Zaobljenje ivica dropdown menija */
+        }
+        .dropdown-item {
+            color: #FFD700 !important; /* Jarko žuta za tekst dropdown stavki */
+        }
+        .dropdown-item:hover {
+            background-color: #FFD700; /* Žuta boja pozadine na hover */
+            color: #000000 !important; /* Crna boja teksta na hover */
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka prilikom prelaska mišem */
+            transition: box-shadow 0.3s ease;
+        }
+        /* Dodatni stilovi za mobilne uređaje */
+        @media (max-width: 767px) {
+            .navbar-nav {
+                padding: 0.5rem;
+            }
+            .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                border-radius: 5px; /* Zaobljenje ivica nav-linkova na mobilnim uređajima */
+            }
+            .nav-link:hover {
+                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Ista senka za mobilne uređaje */
+            }
+        }
+        /* Kraj navigacije */
+
+          .horizontal-line {
+            width: 100%; /* Linija prelazi preko cele širine roditeljskog elementa */
+            height: 3px; /* Debljina linije */
+            background-color: #000000; /* Crna boja */
+            margin: 0; /* Bez margina */
+            border: none; /* Bez ivice */
+        }
+
+        /* Stil za naslovnu sliku */
+       .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f6; /* Pozadinska boja */
+    height: 100vh; /* Visina kontejnera */
+    position: relative; /* Pozicioniranje za hero tekst */
+}
+
+.hero-image {
+    background-image: url('slika_123.jpg'); /* Zamenite sa URL-om vaše slike */
+    background-size: cover;
+    background-position: center;
+    height: 85vh; /* Umanjena visina slike */
+    width: 100%; /* Širina slike */
+    max-width: 1200px; /* Maksimalna širina slike */
+    margin: 0 auto; /* Horizontalno centriranje slike */
+    border: 5px solid #FFD700; /* Žuti okvir oko slike */
+    border-radius: 15px; /* Zaobljenje ivica */
+}
+
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    color: #FFD700;
+    text-shadow: 2px 2px 4px #FF7F50;
+}   
+
+            
+        /* Footer */
+        .content {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #FFD700; /* Jarko žuta boja */
+            color: #000; /* Crna boja teksta */
+            text-align: center;
+            height: 350px; /* Povećana visina footera */
+            margin-top: auto; /* Osigurava da footer bude na dnu stranice */
+        }
+
+        .footer h4 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo za mbilanas.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="o nama.html">O nama</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Usluge
+                            </a>
+                          <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
+                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
+                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
+                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakti.html">Kontakti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-image">
+        <div class="hero-text">
+    <h1 style="color: #FFD700;">1+1=2</h1>
+    <p style="color: #FFD700; font-size: 24px;">Vaš partner za čist račun i uspješno poslovanje!!!</p>
+</div>
+    </div>
+               <div style="height: 45px;"></div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.2020561919912!2d19.2644761!3d42.444716799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deb4bec564ed5%3A0xf9ff1d58c9079e25!2sPodgorica%20City%20Stadium!5e0!3m2!1sen!2s!4v1738981224363!5m2!1sen!2s" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+   <footer class="footer mt-auto py-3">
+    <div class="container">
+        <a href="#">
+            <img src="logo za mbilanas.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+        </a>
+        <h4>MONTEBILANS</h4>
+        <p>Ovo je prvi paragraf u footeru.</p>
+        <p>Ovo je drugi paragraf u footeru.</p>
+        <p>Ovo je treći paragraf u footeru.</p>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

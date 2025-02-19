@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Firma - Početna</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #000000;
+            border-radius: 5px;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important;
+            border-radius: 5px;
+        }
+
+        .navbar-brand img {
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            transition: box-shadow 0.3s ease;
+            max-height: 69px;
+        }
+
+        .navbar-brand img:hover {
+            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6);
+        }
+
+        .navbar-toggler {
+            border-color: #FFD700;
+            border-radius: 3px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .nav-link:hover {
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .dropdown-menu {
+            background-color: #000000;
+            border-radius: 5px;
+        }
+
+        .dropdown-item {
+            color: #FFD700 !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: #FFD700;
+            color: #000000 !important;
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+
+        @media (max-width: 767px) {
+            .navbar-nav {
+                padding: 0.5rem;
+            }
+            .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+            }
+            .nav-link:hover {
+                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important;
+            }
+        }
+
+        .horizontal-line {
+            width: 100%; 
+            height: 2px; 
+            background-color: rgba(255, 165, 0, 0.6);
+            margin: 0; 
+            border: none;
+            box-shadow: 0 2px 8px #000000;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .header-image {
+            width: 1300px;
+            height: 730px;
+        }
+
+        @media (max-width: 600px) {
+            .header-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text-ticker {
+            position: relative;
+            overflow: hidden;
+            height: 100px;
+            background-color: #FFD700;
+            border: 1px solid #FFD700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: moveText 17s linear infinite;
+            text-align: center;
+            color: black;
+            font-size: 24px;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .text-ticker {
+                height: 80px;
+            }
+
+            .text-ticker-content {
+                font-size: 20px;
+                line-height: 50px;
+            }
+        }
+
+        #yearCounter {
+            font-size: 2em;
+            text-align: center;
+            width: 300px;
+            height: 55px;
+            background-color: #000000;
+            border: 5px solid #FFD700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFD700;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .rounded-image {
+            width: 100%;
+            max-width: 330px;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        h2 {
+            color: #FFD700;
+            text-shadow: 2px 2px 4px black;
+            text-align: center;
+            font-size: 50px;
+        }
+
+
+
+    .counter-box {
+      font-size: 2em;
+            text-align: center;
+            width: 300px;
+            height: 55px;
+            background-color: #000000;
+            border: 5px solid #FFD700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFD700;
+            margin: 0 auto;
+            border-radius: 15px;
+    }
+
+        .photo-article {
+            padding: 20px;
+            background-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .photo-item {
+            text-align: center;
+            margin-bottom: 120px;
+        }
+
+        .photo-item img {
+            border-radius: 15px;
+            margin-bottom: 10px;
+            width: 450px;
+            height: 325px;
+            border: 5px solid #FFD700;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+            margin-left: 5px;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .photo-item img:hover {
+            transform: scale(1.10);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.9);
+            border-color: #FFA500;
+        }
+
+        .photo-item h1 {
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 767px) {
+            .photo-item {
+                margin-bottom: 20px;
+            }
+        }
+
+
+           /* slika loga */
+       .custom-image {
+      width: 450px; /* Širina slike */
+      height: 300px; /* Visina slike */
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+             @media (max-width: 600px) {
+            .custom-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+      
+
+        .kontakt-info {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            margin-left: 250px;
+            position: relative;
+        }
+
+        .kontakt-info ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .kontakt-info li {
+            margin-bottom: 15px;
+            flex-basis: calc(50% - 10px);
+        }
+
+        .kontakt-info i {
+            font-size: 2.4em;
+            color: black;
+            margin-right: 10px;
+            text-shadow: 1px 1px 2px #FFD700, -1px -1px 2px #FFD700, 1px -1px 2px #FFD700, -1px 1px 2px #FFD700;
+        }
+
+        .kontakt-info span {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        @media (max-width: 576px) {
+            .kontakt-info {
+                margin-left: 10px;
+            }
+            .kontakt-info ul {
+                flex-direction: column;
+            }
+            .kontakt-info li {
+                flex-basis: 100%;
+            }
+        }
+
+        .map-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 3px solid #FFD700;
+            border-radius: 10px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 600px;
+            border: 3px solid #FFD700;
+        }
+
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: 2px solid #ff7f50;
+            outline: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 20px;
+            text-align: center;
+            opacity: 0.7;
+            transition: opacity 0.5s;
+        }
+
+        #backToTop:hover {
+            opacity: 1;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .footer {
+            background-color: #FFD700;
+            color: #000;
+            text-align: center;
+            height: 350px;
+            margin-top: auto;
+        }
+
+        .footer h4 {
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="montebilans-zlatni.png" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="o nama.html">O nama</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Usluge
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
+                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
+                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
+                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakti.html">Kontakti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <button id="backToTop" title="Back to Top">^</button>
+
+    <div class="image-container">
+        <img src="naslovnaM2.png" alt="Montebilans" class="header-image">
+    </div>
+    
+    <div style="height: 5px;"></div> 
+
+    <div class="horizontal-line"></div>
+    <div style="height: 8px;"></div>
+
+    <div class="text-ticker">
+        <div class="text-ticker-content">
+            Čist račun, dugo poslovanje! - <b>MONTEBILANS</b> - računovodstvo, konsalting, knjigovodstvo, razne vrste registracija, dozvola i prijava boravka!
+        </div>
+    </div>
+    <div style="height: 8px;"></div>
+
+    <div class="horizontal-line"></div>
+           
+    <div style="height: 5px;"></div> 
+
+    <div id="yearCounter">2009</div>
+    <p style="font-size: 28px; color: black; text-shadow: 2px 2px 4px #FFD700; text-align: center;">godine iskustva</p>
+    <p style="font-size: 28px; color: black; text-shadow: 2px 2px 4px #FFD700; text-align: center;">na stotine zadovoljnih korisnika i aktivnih klijenata</p>
+    
+
+     <div class="counter-box" id="counterBox">0</div>
+
+
+       <div style="height: 20px;"></div> 
+    <h2>1+1=2</h2>
+    <div class="image-container">
+        <img src="bijeli_logo.jpg" alt="Unique Image Name" class="rounded-image">
+    </div>
+    <div style="height: 20px;"></div> 
+
+    <div style="height: 55px;"></div> 
+    <div class="horizontal-line"></div>
+    <div style="height: 55px;"></div> 
+
+    <h2>Usluge</h2>
+    
+    <div style="height: 35px;"></div> 
+
+    <article class="photo-article">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="photo-item">
+                    <a href="racunovodstvo.html">
+                        <img src="racunovodstvo.jpg" alt="Opis slike 1" class="img-fluid">
+                        <h1>Računovodstvo</h1>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <div class="photo-item">
+                    <a href="konsalting.html">
+                        <img src="konsalting.jpg" alt="Opis slike 2" class="img-fluid">
+                        <h1>Konsalting</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="photo-item">
+                    <a href="knjigovodstvo.html">
+                        <img src="knjigovodstvo.jpg" alt="Opis slike 3" class="img-fluid">
+                        <h1>Knjigovodstvo</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="photo-item">
+                    <a href="registracija_dozvole.html">
+                        <img src="registracija prijave.jpg" alt="Opis slike 4" class="img-fluid">
+                        <h1>Registracija i Dozvole</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="horizontal-line"></div>
+    <div style="height: 100px;"></div> 
+
+    <img src="montebilans-zlatni.png" alt="montebilans" class="custom-image">
+
+    
+    <div style="height: 100px;"></div> 
+
+    <h2>Kontakti</h2>
+    <div style="height: 35px;"></div> 
+
+  <div class="kontakt-info">
+    <ul>
+        <li>
+            <i class="bi bi-telephone-fill"></i> 
+            <span> +382 20 261 608</span>
+        </li>
+        <li>
+            <i class="bi bi-envelope-fill"></i> 
+            <a href="mailto:info@montebilans.me">info@montebilans.me</a>
+        </li>
+        <li>
+            <i class="bi bi-geo-alt-fill"></i> 
+            <span> Ul. 19.decembar br. 5 (juzna tribina Gradskog stadiona), Podgorica, Montenegro</span>
+        </li>
+        <li>
+            <i class="bi bi-clock-fill"></i> 
+            <span> Pon - Pet: 9:00 - 15:00</span>
+        </li>
+    </ul>
+</div>
+    <div style="height: 10px;"></div> 
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.2020561919912!2d19.2644761!3d42.444716799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deb4bec564ed5%3A0xf9ff1d58c9079e25!2sPodgorica%20City%20Stadium!5e0!3m2!1sen!2s!4v1738981224363!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="height: 55px;"></div> 
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <a href="index.html">
+                <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+            </a>
+            <h4>MONTEBILANS.ME</h4>
+            <p>+382 20 261 608</p>
+            <p>info@montebilans.me</p>
+            <p style="color: #000000;">© 2025 cryptogorac.com</p>
+        </div>
+    </footer>
+
+   <script>
+    let count = 1;
+    const counterBox = document.getElementById('counterBox');
+
+    function updateCounter() {
+      if (count <= 100) {
+        counterBox.textContent = count;
+        count++;
+      } else if (count > 100 && count <= 151) {
+        counterBox.textContent = count;
+        count++;
+      }
+    }
+
+    function startCounting() {
+      if (count <= 100) {
+        updateCounter();
+      } else if (count > 100 && count <= 151) {
+        updateCounter();
+      } else if (count > 151) {
+        count = 1;
+        updateCounter();
+      }
+    }
+
+    setInterval(() => {
+      if (count <= 100) {
+        startCounting();
+      } else if (count > 100 && count <= 151) {
+        setTimeout(startCounting, 1000); // Pauza od 1 sekunde kada dosegne 100
+      } else if (count > 151) {
+        setTimeout(startCounting, 2000); // Pauza od 2 sekunde kada dosegne 151
+      }
+    }, 50); // Interval od 100 milisekundi
+
+    let currentYear = 2009;
+    const endYear = 2025;
+    const duration = 2500;
+    const yearCounter = document.getElementById('yearCounter');
+    let yearInterval;
+    let pauseTimer;
+
+    function updateYearCounter() {
+      const steps = endYear - currentYear + 1;
+      const delay = duration / steps;
+
+      yearInterval = setInterval(() => {
+        if (currentYear > endYear) {
+          clearInterval(yearInterval);
+          pauseTimer = setTimeout(() => {
+            currentYear = 2009;
+            updateYearCounter();
+          }, 2000); // Pauza od 2 sekunde
+        } else {
+          yearCounter.textContent = currentYear;
+          currentYear++;
+        }
+      }, delay);
+    }
+
+    window.onload = updateYearCounter;
+
+    window.onscroll = function() {
+      const backToTopButton = document.getElementById('backToTop');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    document.getElementById('backToTop').addEventListener('click', function() {
+      document.body.scrollTop = 0; 
+      document.documentElement.scrollTop = 0; 
+    });
+  </script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+        
+
+    
+
+
+    
+    

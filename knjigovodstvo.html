@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knjigovodstvo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgba(128, 128, 128, 0.3);
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0; /* Uklanjanje defaultnih margina */
+        }
+        .navbar {
+            background-color: #000000; /* Crna boja za navigacioni bar */
+            border-radius: 5px; /* Zaobljenje ivica nav bara */
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important; /* Jarko žuta za tekst linkova */
+            border-radius: 5px; /* Zaobljenje ivica za nav-linkove */
+        }
+        .navbar-brand img {
+            border: 3px solid #FFD700; /* Žuti okvir */
+            border-radius: 5px; /* Zaobljenje ivica */
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka */
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar-brand img:hover {
+            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6); /* Veća žuta senka prilikom prelaska mišem */
+        }
+        .navbar-toggler {
+            border-color: #FFD700;
+            border-radius: 3px; /* Zaobljenje ivica za toggler */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link:hover {
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Žuta senka prilikom prelaska mišem */
+            transition: box-shadow 0.3s ease;
+        }
+        .dropdown-menu {
+            background-color: #000000; /* Crna boja za dropdown meni */
+            border-radius: 5px; /* Zaobljenje ivica dropdown menija */
+        }
+        .dropdown-item {
+            color: #FFD700 !important; /* Jarko žuta za tekst dropdown stavki */
+        }
+        .dropdown-item:hover {
+            background-color: #FFD700; /* Žuta boja pozadine na hover */
+            color: #000000 !important; /* Crna boja teksta na hover */
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka prilikom prelaska mišem */
+            transition: box-shadow 0.3s ease;
+        }
+        /* Dodatni stilovi za mobilne uređaje */
+        @media (max-width: 767px) {
+            .navbar-nav {
+                padding: 0.5rem;
+            }
+            .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                border-radius: 5px; /* Zaobljenje ivica nav-linkova na mobilnim uređajima */
+            }
+            .nav-link:hover {
+                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Ista senka za mobilne uređaje */
+            }
+            .footer {
+                height: auto; /* Prilagodba visine za manje ekrane */
+            }
+        }
+
+
+
+
+      .content-frame {
+            background-color: white; /* Dodano za vizuelnu razliku */
+            border: 2px solid black;
+            box-shadow: 0 0 10px 5px #FFD700;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        /* Dodatni stilovi za sadržaj stranice */
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            flex: 1; /* Promenjeno iz 0 u 1 da bi se sadržaj protezao */
+        }
+                   #backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: 2px solid #ff7f50; /* Narandžasti okvir */
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px; /* Zakrivljene ivice */
+    width: 50px;
+    height: 50px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+}
+
+#backToTop:hover {
+    opacity: 1;
+}
+
+        /* Footer */
+        .footer {
+            background-color: #FFD700; /* Jarko žuta boja */
+            color: #000; /* Crna boja teksta */
+            text-align: center;
+            height: 350px; /* Povećana visina footera */
+            margin-top: auto; /* Osigurava da footer bude na dnu stranice */
+        }
+
+        .footer h4 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+               <a class="navbar-brand" href="index.html">
+                    <img src="montebilans-zlatni.png" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="o nama.html">O nama</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Usluge
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
+                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
+                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
+                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakti.html">Kontakti</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <button id="backToTop" title="Back to Top">^</button>
+   
+         <main>
+        <div class="container mt-4 content-frame">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Knjigovodstvo</h2>
+                    <div style="height: 30px;"></div>
+                    <img src="knigovodstvo_G.gif" alt="Opis slike" class="teal-border" width="180" height="140">
+                    <div style="height: 30px;"></div>
+                    <div class="content-wrapper">
+                        <div style="height: 30px;"></div>
+                        
+                        
+                        <p>Knjigovodstvene usluge koje nudi <b>Montebilans</b>:<br>
+                            <div style="height: 10px;"></div>
+
+              <b>Vođenje poslovnih knjiga</b> – Unos i knjiženje svih poslovnih promjena (ulazni i izlazni računi, bankovni izvodi, blagajna, putni nalozi).<br>
+
+              <b> Obračun PDV-a</b> – Priprema i predaja PDV prijava, kao i vođenje evidencija o PDV-u.<br>
+
+              <b>Obračun zarada i drugih primanja</b> – Izračun plata zaposlenih, poreza i doprinosa, kao i obračun naknada po ugovorima o djelu ili autorskim ugovorima.
+<br>
+           <b>Izrada mjesečnih i godišnjih finansijskih izveštaja</b> – Bilans stanja, bilans uspjeha, statistički izvještaji i druge obavezne izvještaje.<br>
+
+          <b> Obrada poreskih prijava</b> – Priprema i predaja poreskih prijava (porez na dobit, porez na dohodak, porez na imovinu, godišnji porez na dohodak građana).<br>
+
+            <b> Vođenje pomoćnih knjiga</b> – Knjiga dobavljača, knjiga kupaca, blagajnička knjiga i druge.<br>
+
+             <b> Izrada završnih računa</b> – Priprema završnog računa na kraju poslovne godine.<br>
+
+             <b> Arhiviranje poslovne dokumentacije</b> – Održavanje uredne i propisane dokumentacije u skladu sa zakonskim propisima.<br></p>
+             
+                        <div style="height: 30px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div style="height: 30px;"></div>
+
+      <footer class="footer mt-auto py-3">
+        <div class="container">
+            <a href="index.html">
+                <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
+            </a>
+            <h4>MONTEBILANS.ME</h4>
+            <p>+382 20 261 608</p>
+            <p>info@montebilans.me</p>
+            <p style="color: #000000;">© 2025 cryptogorac.com</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+     <script>
+
+    window.onscroll = function() {
+      const backToTopButton = document.getElementById('backToTop');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    document.getElementById('backToTop').addEventListener('click', function() {
+      document.body.scrollTop = 0; 
+      document.documentElement.scrollTop = 0; 
+    });
+  </script>
+</body>
+</html>
