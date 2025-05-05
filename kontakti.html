@@ -226,6 +226,15 @@
             color: #FFD700;
             text-align: center;
         }
+        /* Stilizacija linkova u footer-u */
+        .footer a {
+            color: #000000; /* Crna boja za vidljivost na žutoj pozadini */
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -330,8 +339,8 @@
             </a>
             <h4>MONTEBILANS.ME</h4>
             <p>+382 20 261 608</p>
-            <p>info@montebilans.me</p>
-            <p style="color: #000000;">© 2025 cryptogorac.com</p>
+            <p><a href="mailto:info@montebilans.me">info@montebilans.me</a></p>
+            <p style="color: #000000;">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a></p>
         </div>
     </footer>
 
