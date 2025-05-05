@@ -7,140 +7,157 @@
     <title>O nama - Montebilans</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<link rel="icon" type="image/png" href="montebilans-zlatni.png">
-  <style>
-    body {
-        background-color: #f3f4f6;
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        margin: 0; /* Uklanjanje defaultnih margina */
-    }
-    .navbar {
-        background-color: #000000; /* Crna boja za navigacioni bar */
-        border-radius: 5px; /* Zaobljenje ivica nav bara */
-    }
-    .navbar-brand, .nav-link {
-        color: #FFD700; /* Jarko žuta za tekst linkova, izbegnuto !important */
-    }
-    .navbar-brand img {
-        border: 3px solid #FFD700; /* Žuti okvir */
-        border-radius: 5px; /* Zaobljenje ivica */
-        box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka */
-        transition: box-shadow 0.3s ease;
-    }
-    .navbar-brand img:hover {
-        box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6); /* Veća žuta senka prilikom prelaska mišem */
-    }
-    .navbar-toggler {
-        border-color: #FFD700;
-        border-radius: 3px; /* Zaobljenje ivica za toggler */
-    }
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    }
-    .nav-link:hover {
-        box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka prilikom prelaska mišem */
-        transition: box-shadow 0.3s ease;
-    }
-    .dropdown-menu {
-        background-color: #000000; /* Crna boja za dropdown meni */
-        border-radius: 5px; /* Zaobljenje ivica dropdown menija */
-    }
-    .dropdown-item {
-        color: #FFD700; /* Jarko žuta za tekst dropdown stavki, izbegnuto !important */
-    }
-    .dropdown-item:hover {
-        background-color: #FFD700; /* Žuta boja pozadine na hover */
-        color: #000000; /* Crna boja teksta na hover */
-        box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka prilikom prelaska mišem */
-        transition: box-shadow 0.3s ease;
-    }
-    /* Dodatni stilovi za mobilne uređaje */
-    @media (max-width: 767px) {
-        .navbar-nav {
-            padding: 0.5rem;
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" href="montebilans-zlatni.png">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
         }
-        .nav-item {
-            margin-bottom: 0.5rem;
+        .navbar {
+            background-color: #000000;
+            border-radius: 5px;
         }
-        .nav-link {
-            padding: 0.5rem 1rem;
-            border-radius: 5px; /* Zaobljenje ivica nav-linkova na mobilnim uređajima */
+        .navbar-brand, .nav-link {
+            color: #FFD700;
+        }
+        .navbar-brand img {
+            border: 3px solid #FFD700;
+            border-radius: 5px;
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar-brand img:hover {
+            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6);
+        }
+        .navbar-toggler {
+            border-color: #FFD700;
+            border-radius: 3px;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
         .nav-link:hover {
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Ista senka za mobilne uređaje */
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            transition: box-shadow 0.3s ease;
         }
-        
-        .footer {
-            height: auto; /* Prilagodba visine za manje ekrane */
+        .dropdown-menu {
+            background-color: #000000;
+            border-radius: 5px;
         }
-    }
-
-   
-
-    /* Stil za .custom-paragraph */
-    .custom-paragraph {
-        background-color: rgba(255, 215, 0, 0.3);
-        border: 2px solid yellow; /* Žuta linija oko elementa */
-        border-radius: 10px; /* Zaobljene ivice */
-        box-shadow: 0 5px 15px rgba(255, 165, 0, 0.5); /* Narandžasta senka */
-        padding: 20px; /* Unutrašnji razmak */
-        margin: 20px auto; /* Centriranje */
-        max-width: 700px; /* Maksimalna širina */
-        width: 100%; /* Širina elementa */
-        font-size: 20px; /* Povećana veličina teksta */
-    }
-
-    /* Stil za .custom-paragraph na mobilnim uređajima */
-    @media (max-width: 767px) {
+        .dropdown-item {
+            color: #FFD700;
+        }
+        .dropdown-item:hover {
+            background-color: #FFD700;
+            color: #000000;
+            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+        @media (max-width: 767px) {
+            .navbar-nav {
+                padding: 0.5rem;
+            }
+            .nav-item {
+                margin-bottom: 0.5rem;
+            }
+            .nav-link {
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+            }
+            .nav-link:hover {
+                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
+            }
+            .footer {
+                height: auto;
+            }
+        }
         .custom-paragraph {
-            max-width: 90%; /* Manja maksimalna širina za mobilne uređaje */
-            padding: 15px; /* Manji unutrašnji razmak za mobilne uređaje */
-            margin: 15px auto; /* Manji margin za mobilne uređaje */
-            font-size: 18px; /* Manja veličina teksta za manje ekrane */
+            background-color: rgba(255, 215, 0, 0.3);
+            border: 2px solid yellow;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.5);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            width: 100%;
+            font-size: 20px;
         }
-    }
-
-    /* Dodatni stilovi za sadržaj stranice */
-    .content {
-        margin-top: 20px;
-        padding: 20px;
-        flex: 1; /* Promenjeno iz 0 u 1 da bi se sadržaj protezao */
-    }
-
+        @media (max-width: 767px) {
+            .custom-paragraph {
+                max-width: 90%;
+                padding: 15px;
+                margin: 15px auto;
+                font-size: 18px;
+            }
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            flex: 1;
+        }
         .teal-border {
-    border: 2px solid orange; /* Narandžasti okvir */
-    box-shadow: 0 0 10px yellow; /* Žuta senka */
-    border-radius: 10px; /* Zakrivljene ivice */
-    width: 80%; /* Prilagođava širinu slike */
-    max-width: 280px; /* Maksimalna širina slike */
-    height: auto; /* Automatski prilagođava visinu */
-    display: block;
-    margin: 0 auto; /* Centriranje slike */
-}
-
-/* Dodajemo medija upit za manje ekrane */
-@media (max-width: 600px) {
-    .teal-border {
-        width: 90%; /* Širina slike će zauzeti 90% širine ekrana */
-        max-width: 100%; /* Maksimalna širina slike */
-    }
-}
-
-    /* Footer */
-    .footer {
-        background-color: #FFD700; /* Jarko žuta boja */
-        color: #000; /* Crna boja teksta */
-        text-align: center;
-        height: 350px; /* Povećana visina footera */
-        margin-top: auto; /* Osigurava da footer bude na dnu stranice */
-    }
-
-    .footer h4 {
-        margin-top: 0;
-    }
-</style>
+            border: 2px solid orange;
+            box-shadow: 0 0 10px yellow;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .teal-border {
+                width: 90%;
+                max-width: 100%;
+            }
+        }
+        .footer {
+            background-color: #FFD700;
+            color: #000;
+            text-align: center;
+            height: 350px;
+            margin-top: auto;
+        }
+        .footer h4 {
+            margin-top: 0;
+        }
+        /* Stilizacija linkova u footer-u */
+        .footer a {
+            color: #000000;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Stilovi za dugme za povratak na vrh */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 9999;
+            font-size: 24px;
+            border: 2px solid #ff7f50;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            opacity: 0.7;
+            transition: opacity 0.4s;
+        }
+        #backToTop:hover {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -180,42 +197,54 @@
         </nav>
     </header>
 
+    <button id="backToTop" title="Back to Top">^</button>
 
     <div class="content">
         <section id="o_nama">
-            
-           
-
-         <main class="container mt-4">
-        <div class="custom-paragraph">
-            <h2>O nama</h2>
-            <div style="height: 20px;"></div>
-            <p><b>Montebilans</b> je knjigovodstvena agencija koja uspešno posluje od <b>2009. godine </b>, pružajući pouzdane i kvalitetne knjigovodstvene usluge malim i srednjim preduzećima. Kao porodični biznis koji vodimo, njegujemo ličan pristup svakom klijentu, uz posvećenost, tačnost i dugogodišnje iskustvo.<br>
-             Nakon <b>rebrendinga 2018. godine</b>, modernizovali smo poslovanje i nastavili da pratimo najnovije standarde u oblasti knjigovodstva. Ponosni smo što sarađujemo sa više od 100 zadovoljnih klijenata, kako u <b>Crnoj Gori, tako i u inostranstvu</b>, pružajući im podršku koja olakšava i unaprijeđuje njihovo poslovanje.<br>
-
-             <div style="height: 20px;"></div>
-              <b>Vaš uspjeh je i naš cilj!</b></p>
-        </div>
-
-           
+            <main class="container mt-4">
+                <div class="custom-paragraph">
+                    <h2>O nama</h2>
+                    <div style="height: 20px;"></div>
+                    <p><b>Montebilans</b> je knjigovodstvena agencija koja uspešno posluje od <b>2009. godine</b>, pružajući pouzdane i kvalitetne knjigovodstvene usluge malim i srednjim preduzećima. Kao porodični biznis koji vodimo, njegujemo ličan pristup svakom klijentu, uz posvećenost, tačnost i dugogodišnje iskustvo.<br>
+                    Nakon <b>rebrendinga 2018. godine</b>, modernizovali smo poslovanje i nastavili da pratimo najnovije standarde u oblasti knjigovodstva. Ponosni smo što sarađujemo sa više od 100 zadovoljnih klijenata, kako u <b>Crnoj Gori, tako i u inostranstvu</b>, pružajući im podršku koja olakšava i unapređuje njihovo poslovanje.<br>
+                    <div style="height: 20px;"></div>
+                    <b>Vaš uspeh je i naš cilj!</b></p>
+                </div>
+            </main>
         </section>
     </div>
-  <img src="o_nama_sl.jpg" alt="Opis slike" class="teal-border" width="280" height="240">
+    <img src="o_nama_sl.jpg" alt="Opis slike" class="teal-border" width="280" height="240">
+    <div style="height: 20px;"></div>
 
-           <div style="height: 20px;"></div>        
-
-      <footer class="footer mt-auto py-3">
+    <footer class="footer mt-auto py-3">
         <div class="container">
             <a href="index.html">
                 <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
             </a>
             <h4>MONTEBILANS.ME</h4>
             <p>+382 20 261 608</p>
-            <p>info@montebilans.me</p>
-            <p style="color: #000000;">© 2025 cryptogorac.com</p>
+            <p><a href="mailto:info@montebilans.me">info@montebilans.me</a></p>
+            <p style="color: #000000;">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a></p>
         </div>
     </footer>
+
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        // Funkcionalnost dugmeta za povratak na vrh
+        window.onscroll = function() {
+            var backToTopButton = document.getElementById('backToTop');
+            console.log('Skrol pozicija:', document.documentElement.scrollTop); // Debagovanje (može se ukloniti)
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
