@@ -1,250 +1,137 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn-ME" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Montebilansu - Vašem partneru za knjigovodstvene i računovodstvene usluge.">
-    <title>O nama - Montebilans</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O nama – Montebilans</title>
+    <meta name="description" content="Montebilans je porodična knjigovodstvena agencija iz Podgorice koja od 2009. godine radi sa malim i srednjim preduzećima u Crnoj Gori i inostranstvu.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://www.montebilans.me/o%20nama.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Montebilans">
+    <meta property="og:title" content="O nama – Montebilans">
+    <meta property="og:description" content="Montebilans je porodična knjigovodstvena agencija iz Podgorice koja od 2009. godine radi sa malim i srednjim preduzećima u Crnoj Gori i inostranstvu.">
+    <meta property="og:image" content="https://www.montebilans.me/naslovna-slika.jpg">
+    <meta property="og:locale" content="sr_ME">
     <link rel="icon" type="image/png" href="montebilans-zlatni.png">
-    <style>
-        body {
-            background-color: #f3f4f6;
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-            margin: 0;
-        }
-        .navbar {
-            background-color: #000000;
-            border-radius: 5px;
-        }
-        .navbar-brand, .nav-link {
-            color: #FFD700;
-        }
-        .navbar-brand img {
-            border: 3px solid #FFD700;
-            border-radius: 5px;
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        .navbar-brand img:hover {
-            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6);
-        }
-        .navbar-toggler {
-            border-color: #FFD700;
-            border-radius: 3px;
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .nav-link:hover {
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        .dropdown-menu {
-            background-color: #000000;
-            border-radius: 5px;
-        }
-        .dropdown-item {
-            color: #FFD700;
-        }
-        .dropdown-item:hover {
-            background-color: #FFD700;
-            color: #000000;
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        @media (max-width: 767px) {
-            .navbar-nav {
-                padding: 0.5rem;
-            }
-            .nav-item {
-                margin-bottom: 0.5rem;
-            }
-            .nav-link {
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-            }
-            .nav-link:hover {
-                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            }
-            .footer {
-                height: auto;
-            }
-        }
-        .custom-paragraph {
-            background-color: rgba(255, 215, 0, 0.3);
-            border: 2px solid yellow;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.5);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 700px;
-            width: 100%;
-            font-size: 20px;
-        }
-        @media (max-width: 767px) {
-            .custom-paragraph {
-                max-width: 90%;
-                padding: 15px;
-                margin: 15px auto;
-                font-size: 18px;
-            }
-        }
-        .content {
-            margin-top: 20px;
-            padding: 20px;
-            flex: 1;
-        }
-        .teal-border {
-            border: 2px solid orange;
-            box-shadow: 0 0 10px yellow;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 280px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        @media (max-width: 600px) {
-            .teal-border {
-                width: 90%;
-                max-width: 100%;
-            }
-        }
-        .footer {
-            background-color: #FFD700;
-            color: #000;
-            text-align: center;
-            height: 350px;
-            margin-top: auto;
-        }
-        .footer h4 {
-            margin-top: 0;
-        }
-        /* Stilizacija linkova u footer-u */
-        .footer a {
-            color: #000000;
-            text-decoration: none;
-            transition: text-decoration 0.3s ease;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        /* Stilovi za dugme za povratak na vrh */
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 9999;
-            font-size: 24px;
-            border: 2px solid #ff7f50;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 10px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            opacity: 0.7;
-            transition: opacity 0.4s;
-        }
-        #backToTop:hover {
-            opacity: 1;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="montebilans-zlatni.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="montebilans-zlatni.png" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Početna</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="o nama.html">O nama</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Usluge
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
-                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
-                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
-                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
-                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontakti.html">Kontakti</a>
-                        </li>
+    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Glavni meni">
+            <a class="nav-logo" href="index.html" aria-label="Montebilans – početna">
+                <img src="logo futer.jpg" alt="Montebilans" width="86" height="56">
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni" aria-label="Otvori meni">
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="glavni-meni">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="o%20nama.html" aria-current="page">O nama</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="meni-usluge">Usluge</button>
+                    <ul class="dropdown-menu" id="meni-usluge">
+                            <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                            <li><a href="konsalting.html">Konsalting</a></li>
+                            <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                            <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
                     </ul>
-                </div>
-            </div>
+                </li>
+                <li><a href="kontakti.html">Kontakti</a></li>
+                <li><a class="nav-cta" href="tel:+38220261608"><i class="bi bi-telephone-fill" aria-hidden="true"></i> Pozovite nas</a></li>
+            </ul>
         </nav>
     </header>
 
-    <button id="backToTop" title="Back to Top">^</button>
-
-    <div class="content">
-        <section id="o_nama">
-            <main class="container mt-4">
-                <div class="custom-paragraph">
-                    <h2>O nama</h2>
-                    <div style="height: 20px;"></div>
-                    <p><b>Montebilans</b> je knjigovodstvena agencija koja uspešno posluje od <b>2009. godine</b>, pružajući pouzdane i kvalitetne knjigovodstvene usluge malim i srednjim preduzećima. Kao porodični biznis koji vodimo, njegujemo ličan pristup svakom klijentu, uz posvećenost, tačnost i dugogodišnje iskustvo.<br>
-                    Nakon <b>rebrendinga 2018. godine</b>, modernizovali smo poslovanje i nastavili da pratimo najnovije standarde u oblasti knjigovodstva. Ponosni smo što sarađujemo sa više od 100 zadovoljnih klijenata, kako u <b>Crnoj Gori, tako i u inostranstvu</b>, pružajući im podršku koja olakšava i unapređuje njihovo poslovanje.<br>
-                    <div style="height: 20px;"></div>
-                    <b>Vaš uspeh je i naš cilj!</b></p>
-                </div>
-            </main>
+    <main id="sadrzaj">
+        <section class="zaglavlje-strane">
+            <div class="container">
+                <nav class="mrvice" aria-label="Putanja"><a href="index.html">Početna</a> <span aria-hidden="true">/</span> <span aria-current="page">O nama</span></nav>
+                <h1>O nama</h1>
+                <p>Porodična knjigovodstvena agencija sa iskustvom od 2009. godine.</p>
+            </div>
         </section>
-    </div>
-    <img src="o_nama_sl.jpg" alt="Opis slike" class="teal-border" width="280" height="240">
-    <div style="height: 20px;"></div>
 
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <a href="index.html">
-                <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-            </a>
-            <h4>MONTEBILANS.ME</h4>
-            <p>+382 20 261 608</p>
-            <p><a href="mailto:info@montebilans.me">info@montebilans.me</a></p>
-            <p style="color: #000000;">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a></p>
+        <section class="sekcija">
+            <div class="container dvije-kolone">
+                <div class="okvir-slike pojava">
+                    <img src="o_nama_sl.jpg" alt="Tim Montebilans" width="1280" height="1083" loading="lazy">
+                </div>
+                <div class="pojava">
+                    <span class="oznaka-zlatna">Od 2009. godine</span>
+                    <h2>Ko smo mi</h2>
+                    <p><b>Montebilans</b> je knjigovodstvena agencija koja uspješno posluje od <b>2009. godine</b>, pružajući pouzdane i kvalitetne knjigovodstvene usluge malim i srednjim preduzećima. Kao porodični biznis koji vodimo, njegujemo lični pristup svakom klijentu, uz posvećenost, tačnost i dugogodišnje iskustvo.</p>
+                    <p>Nakon <b>rebrendinga 2018. godine</b>, modernizovali smo poslovanje i nastavili da pratimo najnovije standarde u oblasti knjigovodstva. Ponosni smo što sarađujemo sa više od 100 zadovoljnih klijenata, kako u <b>Crnoj Gori, tako i u inostranstvu</b>, pružajući im podršku koja olakšava i unapređuje njihovo poslovanje.</p>
+                    <p class="citat"><span>Vaš uspjeh je i naš cilj!</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sekcija sekcija-svijetla">
+            <div class="container">
+                <div class="brojaci pojava">
+                    <div class="brojac"><strong data-od="2009" data-do="godine" data-sufiks="+">0</strong><span>godina iskustva</span></div>
+                    <div class="brojac"><strong data-do="100" data-sufiks="+">0</strong><span>klijenata u Crnoj Gori i inostranstvu</span></div>
+                    <div class="brojac"><strong>2018.</strong><span>godina rebrendinga i modernizacije</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="sekcija sekcija-svijetla">
+            <div class="container">
+                <div class="cta pojava">
+                    <div>
+                        <h2>Treba vam pouzdan računovođa?</h2>
+                        <p>Pozovite nas ili pošaljite poruku – odgovaramo brzo.</p>
+                    </div>
+                    <div class="hero-akcije">
+                        <a class="btn btn-zlatno" href="kontakti.html">Kontaktirajte nas</a>
+                        <a class="btn btn-obrub" href="tel:+38220261608"><i class="bi bi-telephone-fill" aria-hidden="true"></i> +382 20 261 608</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="index.html" aria-label="Montebilans – početna">
+                    <img src="logo futer.jpg" alt="Montebilans" width="108" height="70" loading="lazy">
+                </a>
+                <p><strong>Čist račun, dugo poslovanje!</strong><br>Računovodstvo, konsalting, knjigovodstvo, registracije i dozvole u Podgorici od 2009. godine.</p>
+            </div>
+            <div>
+                <h2>Usluge</h2>
+                <ul>
+                    <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                    <li><a href="konsalting.html">Konsalting</a></li>
+                    <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                    <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li><a href="tel:+38220261608">+382 20 261 608</a></li>
+                    <li><a href="mailto:info@montebilans.me">info@montebilans.me</a></li>
+                    <li>Ul. 19. decembra br. 5 (južna tribina Gradskog stadiona), Podgorica</li>
+                    <li>Pon – Pet: 8:00 – 15:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-dno">
+            <span>© <span data-godina>2026</span> Montebilans. Sva prava zadržana.</span>
+            <span>Izrada: <a href="https://cryptogorac.com" target="_blank" rel="noopener">cryptogorac.com</a></span>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script>
-        // Funkcionalnost dugmeta za povratak na vrh
-        window.onscroll = function() {
-            var backToTopButton = document.getElementById('backToTop');
-            console.log('Skrol pozicija:', document.documentElement.scrollTop); // Debagovanje (može se ukloniti)
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    <button class="na-vrh" type="button" aria-label="Nazad na vrh"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

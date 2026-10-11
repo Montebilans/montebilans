@@ -1,253 +1,169 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn-ME" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konsalting</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<link rel="icon" type="image/png" href="montebilans-zlatni.png">    
-<style>
-        body {
-            background-color:  rgba(128, 128, 128, 0.3);
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-            margin: 0; /* Uklanjanje defaultnih margina */
-        }
-        .navbar {
-            background-color: #000000; /* Crna boja za navigacioni bar */
-            border-radius: 5px; /* Zaobljenje ivica nav bara */
-        }
-        .navbar-brand, .nav-link {
-            color: #FFD700 !important; /* Jarko žuta za tekst linkova */
-            border-radius: 5px; /* Zaobljenje ivica za nav-linkove */
-        }
-        .navbar-brand img {
-            border: 3px solid #FFD700; /* Žuti okvir */
-            border-radius: 5px; /* Zaobljenje ivica */
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka */
-            transition: box-shadow 0.3s ease;
-        }
-        .navbar-brand img:hover {
-            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6); /* Veća žuta senka prilikom prelaska mišem */
-        }
-        .navbar-toggler {
-            border-color: #FFD700;
-            border-radius: 3px; /* Zaobljenje ivica za toggler */
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .nav-link:hover {
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Žuta senka prilikom prelaska mišem */
-            transition: box-shadow 0.3s ease;
-        }
-        .dropdown-menu {
-            background-color: #000000; /* Crna boja za dropdown meni */
-            border-radius: 5px; /* Zaobljenje ivica dropdown menija */
-        }
-        .dropdown-item {
-            color: #FFD700 !important; /* Jarko žuta za tekst dropdown stavki */
-        }
-        .dropdown-item:hover {
-            background-color: #FFD700; /* Žuta boja pozadine na hover */
-            color: #000000 !important; /* Crna boja teksta na hover */
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4); /* Žuta senka prilikom prelaska mišem */
-            transition: box-shadow 0.3s ease;
-        }
-        /* Dodatni stilovi za mobilne uređaje */
-        @media (max-width: 767px) {
-            .navbar-nav {
-                padding: 0.5rem;
-            }
-            .nav-item {
-                margin-bottom: 0.5rem;
-            }
-            .nav-link {
-                padding: 0.5rem 1rem;
-                border-radius: 5px; /* Zaobljenje ivica nav-linkova na mobilnim uređajima */
-            }
-            .nav-link:hover {
-                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important; /* Ista senka za mobilne uređaje */
-            }
-            .footer {
-                height: auto; /* Prilagodba visine za manje ekrane */
-            }
-        }
-
-       .content-frame {
-            background-color: white; /* Dodano za vizuelnu razliku */
-            border: 2px solid black;
-            box-shadow: 0 0 10px 5px #FFD700;
-            border-radius: 20px;
-            padding: 20px;
-        }
-        /* Dodatni stilovi za sadržaj stranice */
-        .content {
-            margin-top: 20px;
-            padding: 20px;
-            flex: 1; /* Promenjeno iz 0 u 1 da bi se sadržaj protezao */
-        }
-
-                   #backToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: 2px solid #ff7f50; /* Narandžasti okvir */
-    outline: none;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px; /* Zakrivljene ivice */
-    width: 50px;
-    height: 50px;
-    line-height: 20px;
-    text-align: center;
-    opacity: 0.7;
-    transition: opacity 0.4s;
-}
-
-#backToTop:hover {
-    opacity: 1;
-}
-
-        /* Footer */
-     .footer {
-    background-color: #FFD700; /* Jarko žuta pozadina */
-    color: #000; /* Crna boja teksta */
-    text-align: center;
-    height: 350px; /* Fiksna visina footera */
-    margin-top: auto; /* Osigurava da footer ostane na dnu stranice */
-}
-
-.footer h4 {
-    margin-top: 0; /* Uklanja gornju marginu za h4 naslov */
-}
-
-/* Stilizacija linkova u footer-u */
-.footer a {
-    color: #000000; /* Crna boja za vidljivost na žutoj pozadini */
-    text-decoration: none; /* Uklanja podvlačenje po default-u */
-    transition: text-decoration 0.3s ease; /* Glatka tranzicija za podvlačenje */
-}
-
-.footer a:hover {
-    text-decoration: underline; /* Dodaje podvlačenje na hover */
-}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Konsalting – Montebilans</title>
+    <meta name="description" content="Konsalting usluge Montebilans: poreski, finansijski i poslovni konsalting, transferne cijene, due diligence i investicioni konsalting.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://www.montebilans.me/konsalting.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Montebilans">
+    <meta property="og:title" content="Konsalting – Montebilans">
+    <meta property="og:description" content="Konsalting usluge Montebilans: poreski, finansijski i poslovni konsalting, transferne cijene, due diligence i investicioni konsalting.">
+    <meta property="og:image" content="https://www.montebilans.me/naslovna-slika.jpg">
+    <meta property="og:locale" content="sr_ME">
+    <link rel="icon" type="image/png" href="montebilans-zlatni.png">
+    <link rel="apple-touch-icon" href="montebilans-zlatni.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-               <a class="navbar-brand" href="index.html">
-                    <img src="montebilans-zlatni.png" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Početna</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="o nama.html">O nama</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Usluge
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
-                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
-                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
-                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
-                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontakti.html">Kontakti</a>
-                        </li>
+    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Glavni meni">
+            <a class="nav-logo" href="index.html" aria-label="Montebilans – početna">
+                <img src="logo futer.jpg" alt="Montebilans" width="86" height="56">
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni" aria-label="Otvori meni">
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="glavni-meni">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="o%20nama.html">O nama</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="meni-usluge" style="box-shadow: inset 0 -2px 0 var(--zlatna)">Usluge</button>
+                    <ul class="dropdown-menu" id="meni-usluge">
+                            <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                            <li><a href="konsalting.html" aria-current="page">Konsalting</a></li>
+                            <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                            <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
                     </ul>
-                </div>
-            </div>
+                </li>
+                <li><a href="kontakti.html">Kontakti</a></li>
+                <li><a class="nav-cta" href="tel:+38220261608"><i class="bi bi-telephone-fill" aria-hidden="true"></i> Pozovite nas</a></li>
+            </ul>
         </nav>
     </header>
-    <button id="backToTop" title="Back to Top">^</button>
-     <main>
-        <div class="container mt-4 content-frame">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Konsalting</h2>
-                    <div style="height: 30px;"></div>
-                    <img src="konsalting_G.gif" alt="Opis slike" class="teal-border" width="180" height="140">
-                    <div style="height: 30px;"></div>
-                    <div class="content-wrapper">
-                        <div style="height: 30px;"></div>
-                        
-                        
-                         <p>Konsalting usluge koje nudi <b> Montebilans</b>:<br>
-                            <div style="height: 10px;"></div>
 
-      <b> Poreski konsalting</b> – SavJetovanje o optimizaciji poreskih obaveza, analiza poreskih rizika, izrada poreskih strategija i podrška tokom poreskih inspekcija.<br>
+    <main id="sadrzaj">
+        <section class="zaglavlje-strane">
+            <div class="container">
+                <nav class="mrvice" aria-label="Putanja"><a href="index.html">Početna</a> <span aria-hidden="true">/</span> <a href="index.html#usluge">Usluge</a> <span aria-hidden="true">/</span> <span aria-current="page">Konsalting</span></nav>
+                <h1>Konsalting</h1>
+                <p>Stručna podrška menadžmentu u donošenju poslovnih odluka.</p>
+            </div>
+        </section>
 
-<b> Finansijski konsalting</b> – Izrada finansijskih planova i analiza, budžetiranje, upravljanje novčanim tokovima i procJena profitabilnosti poslovanja.<br>
-
-<b> Poslovno savJetovanje</b> – Pomoć u planiranju i organizaciji poslovanja, optimizaciji poslovnih procesa i strategijama rasta i razvoja firme.<br>
-
-<b> Konsalting za osnivanje i restrukturiranje firmi</b> – SavJetovanje prilikom osnivanja novih firmi, izbora pravnog oblika, kao i tokom spajanja, preuzimanja ili restrukturiranja postojećih firmi.<br>
-
-<b> Priprema za kreditiranje</b> – Analiza finansijskih izvještaja, priprema dokumentacije i savjeti za uspešno apliciranje za kredite ili druge oblike finansiranja.<br>
-<b> Priprema i analiza ugovora</b> – Savjetovanje prilikom sklapanja poslovnih ugovora, procjena finansijskih i pravnih rizika.<br>
-
-<b> Transferne cijene</b> – Savjetovanje i izrada studija o transfernim cijenama za povezana pravna lica u skladu sa zakonskim zahtjevima.<br>
-
-<b> Due diligence</b> – Detaljna finansijska, poreska i pravna analiza prije kupovine, prodaje ili spajanja firmi.<br>
-
-<b> Investicioni konsalting</b> – Analiza isplativosti investicija, priprema investicionih projekata i saveti o izvorima finansiranja.<br>
-
-Računovodstvene agencije koje se bave konsaltingom pružaju stručnu podršku menadžmentu u donošenju poslovnih odluka, smanjenju rizika i poboljšanju ukupnog poslovanja.</p>
-
-                        <div style="height: 30px;"></div>
+        <section class="sekcija">
+            <div class="container">
+                <div class="usluga-uvod pojava">
+                    <img src="konsalting_G.gif" alt="Konsalting – ilustracija" width="220" height="220">
+                    <p>Konsalting usluge koje nudi <b>Montebilans</b>:</p>
+                </div>
+                <ul class="lista-usluga">
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Poreski konsalting</h3>
+                        <p>Savjetovanje o optimizaciji poreskih obaveza, analiza poreskih rizika, izrada poreskih strategija i podrška tokom poreskih inspekcija.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Finansijski konsalting</h3>
+                        <p>Izrada finansijskih planova i analiza, budžetiranje, upravljanje novčanim tokovima i procjena profitabilnosti poslovanja.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Poslovno savjetovanje</h3>
+                        <p>Pomoć u planiranju i organizaciji poslovanja, optimizaciji poslovnih procesa i strategijama rasta i razvoja firme.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Konsalting za osnivanje i restrukturiranje firmi</h3>
+                        <p>Savjetovanje prilikom osnivanja novih firmi, izbora pravnog oblika, kao i tokom spajanja, preuzimanja ili restrukturiranja postojećih firmi.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Priprema za kreditiranje</h3>
+                        <p>Analiza finansijskih izvještaja, priprema dokumentacije i savjeti za uspješno apliciranje za kredite ili druge oblike finansiranja.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Priprema i analiza ugovora</h3>
+                        <p>Savjetovanje prilikom sklapanja poslovnih ugovora, procjena finansijskih i pravnih rizika.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Transferne cijene</h3>
+                        <p>Savjetovanje i izrada studija o transfernim cijenama za povezana pravna lica u skladu sa zakonskim zahtjevima.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Due diligence</h3>
+                        <p>Detaljna finansijska, poreska i pravna analiza prije kupovine, prodaje ili spajanja firmi.</p>
+                    </li>
+                    <li class="pojava">
+                        <i class="bi bi-check-lg" aria-hidden="true"></i>
+                        <h3>Investicioni konsalting</h3>
+                        <p>Analiza isplativosti investicija, priprema investicionih projekata i savjeti o izvorima finansiranja.</p>
+                    </li>
+                </ul>
+                <p class="napomena pojava">Računovodstvene agencije koje se bave konsaltingom pružaju stručnu podršku menadžmentu u donošenju poslovnih odluka, smanjenju rizika i poboljšanju ukupnog poslovanja.</p>
+            </div>
+        </section>
+        <section class="sekcija sekcija-svijetla">
+            <div class="container">
+                <div class="cta pojava">
+                    <div>
+                        <h2>Treba vam pouzdan računovođa?</h2>
+                        <p>Pozovite nas ili pošaljite poruku – odgovaramo brzo.</p>
+                    </div>
+                    <div class="hero-akcije">
+                        <a class="btn btn-zlatno" href="kontakti.html">Kontaktirajte nas</a>
+                        <a class="btn btn-obrub" href="tel:+38220261608"><i class="bi bi-telephone-fill" aria-hidden="true"></i> +382 20 261 608</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
-    <div style="height: 30px;"></div>
-   <footer class="footer mt-auto py-3">
-    <div class="container">
-        <a href="index.html">
-            <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-        </a>
-        <h4>MONTEBILANS.ME</h4>
-        <p>+382 20 261 608</p>
-        <p><a href="mailto:info@montebilans.me">info@montebilans.me</a></p>
-        <p style="color: #000000;">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a></p>
-    </div>
-</footer>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
-    <script>
-     window.onscroll = function() {
-      const backToTopButton = document.getElementById('backToTop');
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    };
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="index.html" aria-label="Montebilans – početna">
+                    <img src="logo futer.jpg" alt="Montebilans" width="108" height="70" loading="lazy">
+                </a>
+                <p><strong>Čist račun, dugo poslovanje!</strong><br>Računovodstvo, konsalting, knjigovodstvo, registracije i dozvole u Podgorici od 2009. godine.</p>
+            </div>
+            <div>
+                <h2>Usluge</h2>
+                <ul>
+                    <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                    <li><a href="konsalting.html">Konsalting</a></li>
+                    <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                    <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li><a href="tel:+38220261608">+382 20 261 608</a></li>
+                    <li><a href="mailto:info@montebilans.me">info@montebilans.me</a></li>
+                    <li>Ul. 19. decembra br. 5 (južna tribina Gradskog stadiona), Podgorica</li>
+                    <li>Pon – Pet: 8:00 – 15:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-dno">
+            <span>© <span data-godina>2026</span> Montebilans. Sva prava zadržana.</span>
+            <span>Izrada: <a href="https://cryptogorac.com" target="_blank" rel="noopener">cryptogorac.com</a></span>
+        </div>
+    </footer>
 
-    document.getElementById('backToTop').addEventListener('click', function() {
-      document.body.scrollTop = 0; 
-      document.documentElement.scrollTop = 0; 
-    });
-  </script>
+    <button class="na-vrh" type="button" aria-label="Nazad na vrh"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,406 +1,175 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn-ME" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakti - Montebilans</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakti – Montebilans</title>
+    <meta name="description" content="Kontaktirajte Montebilans: telefon +382 20 261 608, email info@montebilans.me, Ul. 19. decembra br. 5, Podgorica.">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://www.montebilans.me/kontakti.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Montebilans">
+    <meta property="og:title" content="Kontakti – Montebilans">
+    <meta property="og:description" content="Kontaktirajte Montebilans: telefon +382 20 261 608, email info@montebilans.me, Ul. 19. decembra br. 5, Podgorica.">
+    <meta property="og:image" content="https://www.montebilans.me/naslovna-slika.jpg">
+    <meta property="og:locale" content="sr_ME">
     <link rel="icon" type="image/png" href="montebilans-zlatni.png">
-    <style>
-        body {
-            background-color: rgba(128, 128, 128, 0.2);
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-            margin: 0;
-        }
-        .navbar {
-            background-color: #000000;
-            border-radius: 5px;
-        }
-        .navbar-brand, .nav-link {
-            color: #FFD700 !important;
-            border-radius: 5px;
-        }
-        .navbar-brand img {
-            border: 3px solid #FFD700;
-            border-radius: 5px;
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        .navbar-brand img:hover {
-            box-shadow: 0 0.7rem 1.4rem rgba(255, 215, 0, 0.6);
-        }
-        .navbar-toggler {
-            border-color: #FFD700;
-            border-radius: 3px;
-        }
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 215, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-        .nav-link:hover {
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important;
-            transition: box-shadow 0.3s ease;
-        }
-        .dropdown-menu {
-            background-color: #000000;
-            border-radius: 5px;
-        }
-        .dropdown-item {
-            color: #FFD700 !important;
-        }
-        .dropdown-item:hover {
-            background-color: #FFD700;
-            color: #000000 !important;
-            box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4);
-            transition: box-shadow 0.3s ease;
-        }
-        @media (max-width: 767px) {
-            .navbar-nav {
-                padding: 0.5rem;
-            }
-            .nav-item {
-                margin-bottom: 0.5rem;
-            }
-            .nav-link {
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-            }
-            .nav-link:hover {
-                box-shadow: 0 0.5rem 1rem rgba(255, 215, 0, 0.4) !important;
-            }
-            .footer {
-                height: auto;
-            }
-        }
-        .content {
-            background-color: white;
-            margin-top: 20px;
-            padding: 20px;
-            flex: 1;
-        }
-        .kontakt-info {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 20px;
-            font-family: 'Roboto', sans-serif;
-            margin-left: 250px;
-            position: relative;
-        }
-        .kontakt-info ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .kontakt-info li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .kontakt-info i {
-            font-size: 1.2em;
-            color: black;
-            margin-right: 10px;
-            text-shadow: 1px 1px 2px #FFD700, -1px -1px 2px #FFD700, 1px -1px 2px #FFD700, -1px 1px 2px #FFD700;
-        }
-        .kontakt-info span {
-            font-size: 1.2em;
-            color: #333;
-        }
-        @media (max-width: 576px) {
-            .kontakt-info {
-                margin-left: 10px;
-            }
-        }
-        .contact-form {
-            background: #000000;
-            padding: 20px;
-            border-radius: 10px;
-            border: 3px solid #FFD700;
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
-            max-width: 500px;
-            height: 700px;
-            margin-left: 15%;
-            color: #FFD700;
-        }
-        .contact-form h2 {
-            margin-bottom: 20px;
-            color: #FFD700;
-            text-align: center;
-        }
-        .contact-form p {
-            color: #FFD700;
-        }
-        .contact-form .form-group label {
-            color: #FFD700;
-            font-weight: bold;
-        }
-        .contact-form .form-control {
-            border-radius: 5px;
-            border: 1px solid #FFD700;
-            padding: 15px;
-            font-size: 16px;
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .contact-form .btn {
-            background-color: #FFD700;
-            color: #000000;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .contact-form .btn:hover {
-            background-color: #ff7f50;
-        }
-        @media (max-width: 767px) {
-            .contact-form {
-                padding: 20px;
-                max-width: 100%;
-                margin: 0;
-            }
-            .contact-form .form-control {
-                padding: 10px;
-            }
-        }
-        h2 {
-            color: #000000;
-            text-align: left;
-            padding-left: 15%;
-            font-family: 'Arial', sans-serif;
-            font-size: 2em;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .map-container {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 1300px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 3px solid #FFD700;
-            border-radius: 10px;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 600px;
-            border: 3px solid #FFD700;
-        }
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 9999;
-            font-size: 24px;
-            border: 2px solid #ff7f50;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 10px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            opacity: 0.7;
-            transition: opacity 0.4s;
-        }
-        #backToTop:hover {
-            opacity: 1;
-        }
-        .footer {
-            background-color: #FFD700;
-            color: #000;
-            text-align: center;
-            height: 350px;
-            margin-top: auto;
-        }
-        .footer h4 {
-            margin-top: 0;
-        }
-        #result {
-            margin-top: 10px;
-            color: #FFD700;
-            text-align: center;
-        }
-        /* Stilizacija linkova u footer-u */
-        .footer a {
-            color: #000000; /* Crna boja za vidljivost na žutoj pozadini */
-            text-decoration: none;
-            transition: text-decoration 0.3s ease;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="montebilans-zlatni.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="montebilans-zlatni.png" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Početna</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="o nama.html">O nama</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="webDevelopmentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Usluge
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="webDevelopmentDropdown">
-                                <li><a class="dropdown-item" href="racunovodstvo.html">Računovodstvo</a></li>
-                                <li><a class="dropdown-item" href="konsalting.html">Konsalting</a></li>
-                                <li><a class="dropdown-item" href="knjigovodstvo.html">Knjigovodstvo</a></li>
-                                <li><a class="dropdown-item" href="registracija_dozvole.html">Registracija-Dozvole</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontakti.html">Kontakti</a>
-                        </li>
+    <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Glavni meni">
+            <a class="nav-logo" href="index.html" aria-label="Montebilans – početna">
+                <img src="logo futer.jpg" alt="Montebilans" width="86" height="56">
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni" aria-label="Otvori meni">
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="glavni-meni">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="o%20nama.html">O nama</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="meni-usluge">Usluge</button>
+                    <ul class="dropdown-menu" id="meni-usluge">
+                            <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                            <li><a href="konsalting.html">Konsalting</a></li>
+                            <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                            <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
                     </ul>
-                </div>
-            </div>
+                </li>
+                <li><a href="kontakti.html" aria-current="page">Kontakti</a></li>
+                <li><a class="nav-cta" href="tel:+38220261608"><i class="bi bi-telephone-fill" aria-hidden="true"></i> Pozovite nas</a></li>
+            </ul>
         </nav>
     </header>
 
-    <button id="backToTop" title="Back to Top">^</button>
-
-    <div style="height: 45px;"></div>
-    <h2><b>KONTAKTI</b></h2>
-    <h2 style="font-size: 20px;">Ako imate bilo kakva pitanja, komentara ili predloga, slobodno nas kontaktirajte putem:</h2>
-    <div class="kontakt-info">
-        <ul>
-            <li>
-                <i class="bi bi-telephone-fill"></i>
-                <span>+382 20 261 608</span>
-            </li>
-            <li>
-                <i class="bi bi-envelope-fill"></i>
-                <span>info@montebilans.com</span>
-            </li>
-            <li>
-                <i class="bi bi-geo-alt-fill"></i>
-                <span>Ul. 19.decembar br. 5 (južna tribina Gradskog stadiona), Podgorica, Montenegro</span>
-            </li>
-            <li>
-                <i class="bi bi-clock-fill"></i>
-                <span>Pon - Pet: 8:00 - 15:00</span>
-            </li>
-        </ul>
-    </div>
-    <h2><b>Pišite nam!</b></h2>
-    <div class="contact-form">
-        <h2>MONTEBILANS</h2>
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="8a49b34b-a613-4e89-8950-e8b0dd818eb3">
-            <div class="form-group">
-                <label for="name">Ime:</label>
-                <input type="text" id="name" name="name" class="form-control" required>
+    <main id="sadrzaj">
+        <section class="zaglavlje-strane">
+            <div class="container">
+                <nav class="mrvice" aria-label="Putanja"><a href="index.html">Početna</a> <span aria-hidden="true">/</span> <span aria-current="page">Kontakti</span></nav>
+                <h1>Kontakti</h1>
+                <p>Ako imate bilo kakva pitanja, komentare ili prijedloge, slobodno nas kontaktirajte.</p>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+        </section>
+
+        <section class="sekcija">
+            <div class="container">
+                <div class="kontakt-grid pojava">
+                <div class="kontakt-stavka">
+                    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                    <strong>Telefon</strong>
+                    <a href="tel:+38220261608">+382 20 261 608</a>
+                </div>
+                <div class="kontakt-stavka">
+                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                    <strong>Email</strong>
+                    <a href="mailto:info@montebilans.me">info@montebilans.me</a>
+                </div>
+                <div class="kontakt-stavka">
+                    <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                    <strong>Adresa</strong>
+                    <span>Ul. 19. decembra br. 5 (južna tribina Gradskog stadiona), Podgorica, Crna Gora</span>
+                </div>
+                <div class="kontakt-stavka">
+                    <i class="bi bi-clock-fill" aria-hidden="true"></i>
+                    <strong>Radno vrijeme</strong>
+                    <span>Pon – Pet: 8:00 – 15:00</span>
+                </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="message">Poruka:</label>
-                <textarea id="message" name="message" class="form-control" rows="10" required></textarea>
-                <p>*POŽELJNO JE OSTAVITI KONTAKT TELEFON!</p>
+        </section>
+
+        <section class="sekcija sekcija-svijetla">
+            <div class="container dvije-kolone">
+                <div class="pojava">
+                    <span class="oznaka-zlatna">Pišite nam!</span>
+                    <h2>Pošaljite nam poruku</h2>
+                    <p>Popunite formu i javićemo vam se u najkraćem roku. Poželjno je da ostavite i kontakt telefon kako bismo vas brže dobili.</p>
+                    <p><i class="bi bi-telephone-fill" aria-hidden="true"></i> <a href="tel:+38220261608"><b>+382 20 261 608</b></a><br>
+                       <i class="bi bi-envelope-fill" aria-hidden="true"></i> <a href="mailto:info@montebilans.me"><b>info@montebilans.me</b></a></p>
+                </div>
+                <div class="forma-omot pojava">
+                    <h2>MONTEBILANS</h2>
+                    <form id="kontakt-forma" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="8a49b34b-a613-4e89-8950-e8b0dd818eb3">
+                        <input type="hidden" name="subject" value="Nova poruka sa sajta montebilans.me">
+                        <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <div class="polje">
+                            <label for="ime">Ime i prezime</label>
+                            <input type="text" id="ime" name="name" autocomplete="name" required>
+                        </div>
+                        <div class="polje">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="polje">
+                            <label for="telefon">Telefon <span style="color:#bdbdbd;font-weight:400">(poželjno)</span></label>
+                            <input type="tel" id="telefon" name="phone" autocomplete="tel">
+                        </div>
+                        <div class="polje">
+                            <label for="poruka">Poruka</label>
+                            <textarea id="poruka" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-zlatno">Pošalji poruku <i class="bi bi-send-fill" aria-hidden="true"></i></button>
+                        <p id="forma-rezultat" class="forma-rezultat" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
             </div>
-            <div style="height: 50px;"></div>
-            <button type="submit" class="btn">Pošalji</button>
-        </form>
-        <div id="result"></div>
-    </div>
+        </section>
 
-    <div style="height: 45px;"></div>
-    <h2><b>Pronadjite nas!</b></h2>
+        <section class="sekcija">
+            <div class="container">
+                <div class="naslov-sekcije pojava">
+                    <h2>Pronađite nas!</h2>
+                    <p>Ul. 19. decembra br. 5 (južna tribina Gradskog stadiona), Podgorica</p>
+                </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.2313670984!2d19.264909599999996!3d42.44409309999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deb001fb27109%3A0xc2c01f4d027f5203!2sMontebilans!5e0!3m2!1sen!2s!4v1741616564829!5m2!1sen!2s" title="Montebilans na Google mapi" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.2313670984!2d19.264909599999996!3d42.44409309999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134deb001fb27109%3A0xc2c01f4d027f5203!2sMontebilans!5e0!3m2!1sen!2s!4v1741616564829!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div style="height: 5px;"></div>
-
-    <footer class="footer mt-auto py-3">
-        <div class="container">
-            <a href="index.html">
-                <img src="logo futer.jpg" alt="Montebilans" class="d-inline-block align-top" style="max-height: 69px; border: 2px solid #FFD700; border-radius: 5px;">
-            </a>
-            <h4>MONTEBILANS.ME</h4>
-            <p>+382 20 261 608</p>
-            <p><a href="mailto:info@montebilans.me">info@montebilans.me</a></p>
-            <p style="color: #000000;">© 2025 <a href="https://cryptogorac.com" target="_blank">cryptogorac.com</a></p>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a class="footer-logo" href="index.html" aria-label="Montebilans – početna">
+                    <img src="logo futer.jpg" alt="Montebilans" width="108" height="70" loading="lazy">
+                </a>
+                <p><strong>Čist račun, dugo poslovanje!</strong><br>Računovodstvo, konsalting, knjigovodstvo, registracije i dozvole u Podgorici od 2009. godine.</p>
+            </div>
+            <div>
+                <h2>Usluge</h2>
+                <ul>
+                    <li><a href="racunovodstvo.html">Računovodstvo</a></li>
+                    <li><a href="konsalting.html">Konsalting</a></li>
+                    <li><a href="knjigovodstvo.html">Knjigovodstvo</a></li>
+                    <li><a href="registracija_dozvole.html">Registracija i dozvole</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Kontakt</h2>
+                <ul>
+                    <li><a href="tel:+38220261608">+382 20 261 608</a></li>
+                    <li><a href="mailto:info@montebilans.me">info@montebilans.me</a></li>
+                    <li>Ul. 19. decembra br. 5 (južna tribina Gradskog stadiona), Podgorica</li>
+                    <li>Pon – Pet: 8:00 – 15:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-dno">
+            <span>© <span data-godina>2026</span> Montebilans. Sva prava zadržana.</span>
+            <span>Izrada: <a href="https://cryptogorac.com" target="_blank" rel="noopener">cryptogorac.com</a></span>
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script>
-        // Forma
-        const form = document.getElementById('contactForm');
-        const result = document.getElementById('result');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Molimo sačekajte...";
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
-                    result.innerHTML = "Poruka je uspešno poslata!";
-                } else {
-                    console.log(response);
-                    result.innerHTML = json.message;
-                }
-            })
-            .catch(error => {
-                console.log(error);
-                result.innerHTML = "Došlo je do greške!";
-            })
-            .then(function() {
-                form.reset();
-                setTimeout(() => {
-                    result.style.display = "none";
-                }, 3000);
-            });
-        });
-
-        // Funkcionalnost dugmeta za povratak na vrh
-        window.onscroll = function() {
-            var backToTopButton = document.getElementById('backToTop');
-            console.log('Skrol pozicija:', document.documentElement.scrollTop); // Debagovanje (može se ukloniti)
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+    <button class="na-vrh" type="button" aria-label="Nazad na vrh"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
