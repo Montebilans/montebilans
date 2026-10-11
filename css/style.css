@@ -388,10 +388,10 @@ h1, h2, h3 { font-family: var(--font-naslov); line-height: 1.2; margin: 0 0 .6em
 .site-footer a:hover { text-decoration: underline; }
 .site-footer p { margin: .8rem 0 0; }
 .footer-dno {
-  border-top: 1px solid rgba(0, 0, 0, .2); padding-block: 1.1rem; font-size: .92rem;
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+  border-top: 1px solid rgba(0, 0, 0, .2); padding: 1.1rem 0 1.4rem; font-size: .92rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: .25rem;
+  padding-inline: 70px;
 }
-@media (max-width: 800px) { .footer-dno { justify-content: center; text-align: center; } }
 
 /* ---------- Na vrh ---------- */
 .na-vrh {
