@@ -45,7 +45,10 @@ if (naVrh) {
   const provjeri = () => naVrh.classList.toggle('vidljivo', window.scrollY > 400);
   window.addEventListener('scroll', provjeri, { passive: true });
   provjeri();
-  naVrh.addEventListener('click', () => window.scrollTo({ top: 0 }));
+  naVrh.addEventListener('click', () => {
+    window.scrollTo({ top: 0 });
+    naVrh.blur();
+  });
 }
 
 // Tekuća godina u podnožju

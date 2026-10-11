@@ -416,7 +416,9 @@ h1, h2, h3 { font-family: var(--font-naslov); line-height: 1.2; margin: 0 0 .6em
   transition: opacity .3s ease, transform .3s ease, visibility .3s;
 }
 .na-vrh.vidljivo { opacity: 1; visibility: visible; transform: none; }
-.na-vrh:hover { background: var(--zlatna); color: var(--crna); }
+@media (hover: hover) {
+  .na-vrh:hover { background: var(--zlatna); color: var(--crna); }
+}
 
 /* ---------- Animacija pojavljivanja ---------- */
 .pojava { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
