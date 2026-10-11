@@ -89,6 +89,18 @@ if ('IntersectionObserver' in window) {
 }
 
 // Kontakt forma (Web3Forms)
+const EN = document.documentElement.lang === 'en';
+const PORUKE = EN ? {
+  ceka: 'Please wait...',
+  ok: 'Your message has been sent! We will get back to you soon.',
+  greska: 'Something went wrong. Please try again.',
+  mreza: 'Something went wrong. Check your internet connection and try again.',
+} : {
+  ceka: 'Molimo sačekajte...',
+  ok: 'Poruka je uspješno poslata! Javićemo vam se uskoro.',
+  greska: 'Došlo je do greške. Pokušajte ponovo.',
+  mreza: 'Došlo je do greške. Provjerite internet vezu i pokušajte ponovo.',
+};
 const forma = document.getElementById('kontakt-forma');
 if (forma) {
   const rezultat = document.getElementById('forma-rezultat');
@@ -97,7 +109,7 @@ if (forma) {
   forma.addEventListener('submit', async (e) => {
     e.preventDefault();
     rezultat.className = 'forma-rezultat';
-    rezultat.textContent = 'Molimo sačekajte...';
+    rezultat.textContent = PORUKE.ceka;
     dugme.disabled = true;
 
     try {
@@ -109,15 +121,15 @@ if (forma) {
       const json = await odgovor.json();
       if (odgovor.ok && json.success !== false) {
         rezultat.classList.add('ok');
-        rezultat.textContent = 'Poruka je uspješno poslata! Javićemo vam se uskoro.';
+        rezultat.textContent = PORUKE.ok;
         forma.reset();
       } else {
         rezultat.classList.add('greska');
-        rezultat.textContent = json.message || 'Došlo je do greške. Pokušajte ponovo.';
+        rezultat.textContent = json.message || PORUKE.greska;
       }
     } catch {
       rezultat.classList.add('greska');
-      rezultat.textContent = 'Došlo je do greške. Provjerite internet vezu i pokušajte ponovo.';
+      rezultat.textContent = PORUKE.mreza;
     } finally {
       dugme.disabled = false;
     }
